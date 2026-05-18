@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dd60t3newanhw"]
+
+[ext_resource type="Script" uid="uid://b1g3y7r5a1drq" path="res://Creatures/Side_items/healing_arrow.gd" id="1_s68u1"]
+[ext_resource type="Texture2D" uid="uid://ciu5mgi6kdjx1" path="res://icon.svg" id="2_eerfp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxcbi"]
+size = Vector2(36, 36)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4dpq"]
+radius = 24.0
+
+[node name="healing_arrow" type="CharacterBody2D" unique_id=1105836108]
+script = ExtResource("1_s68u1")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1603375075]
+scale = Vector2(0.28125, 0.28125)
+texture = ExtResource("2_eerfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1795328375]
+shape = SubResource("RectangleShape2D_xxcbi")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1612294305]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1637078090]
+shape = SubResource("CircleShape2D_s4dpq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

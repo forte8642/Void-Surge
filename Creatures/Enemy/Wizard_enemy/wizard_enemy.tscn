@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b8uohfbf8i7u5"]
+
+[ext_resource type="Script" uid="uid://d0mh5e8uhcwul" path="res://Creatures/Enemy/Wizard_enemy/wizard_enemy.gd" id="1_4seho"]
+[ext_resource type="Texture2D" uid="uid://ciu5mgi6kdjx1" path="res://icon.svg" id="2_pk405"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdoct"]
+size = Vector2(26, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxvpi"]
+size = Vector2(30, 76)
+
+[node name="wizard_enemy" type="CharacterBody2D" unique_id=2028648087 groups=["Enemy"]]
+script = ExtResource("1_4seho")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1653276632]
+scale = Vector2(0.2265625, 0.59375)
+texture = ExtResource("2_pk405")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=160286559]
+shape = SubResource("RectangleShape2D_mdoct")
+disabled = true
+
+[node name="take_damage_area" type="Area2D" parent="." unique_id=2067232431]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="take_damage_area" unique_id=1224689276]
+shape = SubResource("RectangleShape2D_fxvpi")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1753735522]
+offset_left = -23.0
+offset_top = -68.0
+offset_right = 24.0
+offset_bottom = -41.0
+show_percentage = false
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1912514117]
+wait_time = 2.0
+one_shot = true

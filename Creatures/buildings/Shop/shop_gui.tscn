@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://ptsvaqm4hb2f"]
+
+[ext_resource type="Script" uid="uid://8ye4wmn6nd5h" path="res://Creatures/buildings/Shop/shop_gui.gd" id="1_73w2s"]
+[ext_resource type="Texture2D" uid="uid://ciu5mgi6kdjx1" path="res://icon.svg" id="2_buwme"]
+
+[node name="ShopGUI" type="CanvasLayer" unique_id=2049284815]
+script = ExtResource("1_73w2s")
+
+[node name="Panel" type="Panel" parent="." unique_id=67224217]
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 1142.0
+offset_bottom = 639.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=781825014]
+offset_left = 62.0
+offset_top = 55.0
+offset_right = 190.0
+offset_bottom = 579.0
+
+[node name="Sacred_Hammer" type="TextureButton" parent="VBoxContainer" unique_id=74487001]
+layout_mode = 2
+texture_normal = ExtResource("2_buwme")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Sacred_Hammer" unique_id=1440068509]
+layout_mode = 0
+offset_left = 126.0
+offset_right = 606.0
+offset_bottom = 141.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Sacred_Hammer" unique_id=1764059911]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 4.0
+offset_right = 601.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 32
+text = "Sacred Hammer
++2 to damage
+100 Coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon2" type="Sprite2D" parent="VBoxContainer/Sacred_Hammer" unique_id=2013842266]
+visible = false
+position = Vector2(312.00006, 67.000015)
+rotation = -0.116937056
+scale = Vector2(5.418117, 0.16088128)
+texture = ExtResource("2_buwme")
+
+[node name="Icon" type="Sprite2D" parent="VBoxContainer/Sacred_Hammer" unique_id=2033791847]
+visible = false
+position = Vector2(362, 54.99997)
+rotation = 0.116937056
+scale = Vector2(5.7734375, 0.14062503)
+texture = ExtResource("2_buwme")
+
+[node name="Walking_boots" type="TextureButton" parent="VBoxContainer" unique_id=1903933345]
+layout_mode = 2
+texture_normal = ExtResource("2_buwme")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Walking_boots" unique_id=985546946]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 11.0
+offset_right = 606.0
+offset_bottom = 140.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Walking_boots" unique_id=1286733032]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 4.0
+offset_right = 590.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 32
+text = "Walking boots
++100 to speed
+100 Coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon2" type="Sprite2D" parent="VBoxContainer/Walking_boots" unique_id=74624805]
+visible = false
+position = Vector2(312.00006, 67.000015)
+rotation = -0.116937056
+scale = Vector2(5.418117, 0.16088128)
+texture = ExtResource("2_buwme")
+
+[node name="Icon" type="Sprite2D" parent="VBoxContainer/Walking_boots" unique_id=1926673891]
+visible = false
+position = Vector2(362, 54.99997)
+rotation = 0.116937056
+scale = Vector2(5.7734375, 0.14062503)
+texture = ExtResource("2_buwme")
+
+[node name="Speed​_Mantle" type="TextureButton" parent="VBoxContainer" unique_id=1675614147]
+layout_mode = 2
+texture_normal = ExtResource("2_buwme")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Speed​_Mantle" unique_id=1997500244]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 12.0
+offset_right = 606.0
+offset_bottom = 141.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Speed​_Mantle" unique_id=1432801412]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 4.0
+offset_right = 597.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 32
+text = "Speed ​​Mantle
+-30% to super attach charge
+150 Coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon2" type="Sprite2D" parent="VBoxContainer/Speed​_Mantle" unique_id=2136883953]
+visible = false
+position = Vector2(312.00006, 67.000015)
+rotation = -0.116937056
+scale = Vector2(5.418117, 0.16088128)
+texture = ExtResource("2_buwme")
+
+[node name="Icon" type="Sprite2D" parent="VBoxContainer/Speed​_Mantle" unique_id=1688157919]
+visible = false
+position = Vector2(362, 54.99997)
+rotation = 0.116937056
+scale = Vector2(5.7734375, 0.14062503)
+texture = ExtResource("2_buwme")
+
+[node name="Long_handle" type="TextureButton" parent="VBoxContainer" unique_id=1004695566]
+layout_mode = 2
+texture_normal = ExtResource("2_buwme")
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Long_handle" unique_id=1056689808]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 13.0
+offset_right = 606.0
+offset_bottom = 144.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Long_handle" unique_id=869455555]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 4.0
+offset_right = 588.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 32
+text = "Long handle
++20 to range attack
+300 Coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon2" type="Sprite2D" parent="VBoxContainer/Long_handle" unique_id=1370027330]
+visible = false
+position = Vector2(312.00006, 67.000015)
+rotation = -0.116937056
+scale = Vector2(5.418117, 0.16088128)
+texture = ExtResource("2_buwme")
+
+[node name="Icon" type="Sprite2D" parent="VBoxContainer/Long_handle" unique_id=970684771]
+visible = false
+position = Vector2(362, 54.99997)
+rotation = 0.116937056
+scale = Vector2(5.7734375, 0.14062503)
+texture = ExtResource("2_buwme")
+
+[connection signal="pressed" from="VBoxContainer/Sacred_Hammer" to="." method="_on_sacred_hammer_pressed"]
+[connection signal="pressed" from="VBoxContainer/Walking_boots" to="." method="_on_walking_boots_pressed"]
+[connection signal="pressed" from="VBoxContainer/Speed​_Mantle" to="." method="_on_speed_mantle_pressed"]
+[connection signal="pressed" from="VBoxContainer/Long_handle" to="." method="_on_long_handle_pressed"]

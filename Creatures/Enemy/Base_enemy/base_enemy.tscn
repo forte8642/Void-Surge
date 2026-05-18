@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://bb05486272m6r"]
+
+[ext_resource type="Script" uid="uid://d4mj4qk2uau3u" path="res://Creatures/Enemy/Base_enemy/base_enemy.gd" id="1_073rn"]
+[ext_resource type="Texture2D" uid="uid://ciu5mgi6kdjx1" path="res://icon.svg" id="2_fcnoe"]
+[ext_resource type="Texture2D" uid="uid://cvd0ve7p2uvuy" path="res://Sprites/Wave.png" id="3_fcnoe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxcg6"]
+size = Vector2(36, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2xxr"]
+size = Vector2(36, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fcnoe"]
+radius = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxcg6"]
+atlas = ExtResource("3_fcnoe")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2xxr"]
+atlas = ExtResource("3_fcnoe")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2syyr"]
+atlas = ExtResource("3_fcnoe")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxap5"]
+atlas = ExtResource("3_fcnoe")
+region = Rect2(0, 300, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0ww2"]
+atlas = ExtResource("3_fcnoe")
+region = Rect2(300, 300, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6teas"]
+atlas = ExtResource("3_fcnoe")
+region = Rect2(600, 300, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fh4d3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxcg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2xxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2syyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxap5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0ww2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6teas")
+}],
+"loop": false,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_073rn"]
+radius = 20.024984
+
+[node name="BaseEnemy" type="CharacterBody2D" unique_id=645352883 groups=["Enemy"]]
+script = ExtResource("1_073rn")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1401217904]
+position = Vector2(0, -31)
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("2_fcnoe")
+
+[node name="Icon2" type="Sprite2D" parent="Icon" unique_id=1913039474]
+position = Vector2(-40.604908, 96.28369)
+scale = Vector2(0.3487374, 0.5908054)
+texture = ExtResource("2_fcnoe")
+
+[node name="Icon3" type="Sprite2D" parent="Icon" unique_id=1168899219]
+position = Vector2(39.619064, 94.47619)
+scale = Vector2(0.34523812, 0.5952381)
+texture = ExtResource("2_fcnoe")
+
+[node name="Icon4" type="Sprite2D" parent="Icon" unique_id=12284748]
+position = Vector2(0, -88.38095)
+scale = Vector2(0.42857143, 0.42857143)
+texture = ExtResource("2_fcnoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1559565367]
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_xxcg6")
+disabled = true
+
+[node name="take_damage_area" type="Area2D" parent="." unique_id=2022220989]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="take_damage_area" unique_id=626123281]
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_d2xxr")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=472925631]
+offset_left = -21.0
+offset_top = -98.0
+offset_right = 22.0
+offset_bottom = -71.0
+show_percentage = false
+
+[node name="attack2" type="Area2D" parent="." unique_id=1221005542]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack2" unique_id=805529100]
+position = Vector2(13, 0)
+shape = SubResource("CircleShape2D_fcnoe")
+
+[node name="AttackAnimation2" type="AnimatedSprite2D" parent="attack2" unique_id=719402271]
+visible = false
+position = Vector2(13, 0)
+scale = Vector2(0.18250005, 0.18250005)
+sprite_frames = SubResource("SpriteFrames_fh4d3")
+frame = 5
+frame_progress = 1.0
+
+[node name="attack1" type="Area2D" parent="." unique_id=1662753459]
+monitoring = false
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="attack1" unique_id=955652530]
+position = Vector2(-13, 0)
+shape = SubResource("CircleShape2D_073rn")
+
+[node name="AttackAnimation1" type="AnimatedSprite2D" parent="attack1" unique_id=468991926]
+visible = false
+position = Vector2(-13.000001, 5.9604645e-08)
+scale = Vector2(0.18624999, 0.18624999)
+sprite_frames = SubResource("SpriteFrames_fh4d3")
+frame = 5
+frame_progress = 1.0
+
+[connection signal="body_entered" from="attack2" to="." method="_on_attack_2_body_entered"]
+[connection signal="body_entered" from="attack1" to="." method="_on_attack_1_body_entered"]

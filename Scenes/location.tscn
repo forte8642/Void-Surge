@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://cx4qakw255hrk"]
+
+[ext_resource type="Script" uid="uid://cwdfxotaedub7" path="res://Scenes/location.gd" id="1_cbjjd"]
+[ext_resource type="PackedScene" uid="uid://bn3fauiyjr7wb" path="res://Creatures/Player/Player.tscn" id="1_sv8x7"]
+[ext_resource type="PackedScene" uid="uid://ptsvaqm4hb2f" path="res://Creatures/buildings/Shop/shop_gui.tscn" id="4_dnsau"]
+[ext_resource type="PackedScene" uid="uid://bovvr7oysgxd" path="res://Creatures/buildings/Shop/shop.tscn" id="4_iwk4b"]
+[ext_resource type="PackedScene" uid="uid://dd60t3newanhw" path="res://Creatures/Side_items/Healing_arrow.tscn" id="5_dnsau"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f8lt"]
+size = Vector2(41, 1297)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcd7l"]
+size = Vector2(2305.25, 38.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu4jm"]
+size = Vector2(2305, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0o80"]
+size = Vector2(1297.25, 39)
+
+[node name="Location" type="Node2D" unique_id=879677570]
+script = ExtResource("1_cbjjd")
+
+[node name="Shop" parent="." unique_id=135684406 instance=ExtResource("4_iwk4b")]
+position = Vector2(386, 95)
+
+[node name="Player" parent="." unique_id=1193464966 instance=ExtResource("1_sv8x7")]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(1152, 645)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=444796968]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1155920184]
+
+[node name="Super_attack_charger" type="ProgressBar" parent="CanvasLayer" unique_id=299290701]
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 150.0
+offset_bottom = 42.0
+show_percentage = false
+
+[node name="Wave_charger" type="ProgressBar" parent="CanvasLayer" unique_id=1035635147]
+offset_left = 17.0
+offset_top = 42.0
+offset_right = 44.0
+offset_bottom = 69.0
+show_percentage = false
+
+[node name="Player_hp_bar" type="ProgressBar" parent="CanvasLayer" unique_id=1494211125]
+offset_left = 18.0
+offset_top = 69.0
+offset_right = 150.0
+offset_bottom = 96.0
+show_percentage = false
+
+[node name="Riptide_timer" type="Label" parent="CanvasLayer" unique_id=134663607]
+offset_left = 249.0
+offset_right = 535.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+
+[node name="Money" type="Label" parent="CanvasLayer" unique_id=322575916]
+offset_right = 330.0
+offset_bottom = 23.0
+
+[node name="ShopGUI" parent="CanvasLayer" unique_id=2049284815 instance=ExtResource("4_dnsau")]
+visible = false
+
+[node name="healing_arrow" parent="." unique_id=1105836108 instance=ExtResource("5_dnsau")]
+position = Vector2(532, 283)
+
+[node name="LocationBoard" type="StaticBody2D" parent="." unique_id=2040489236]
+visibility_layer = 4
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LocationBoard" unique_id=174740559]
+position = Vector2(-21, 648.5)
+shape = SubResource("RectangleShape2D_1f8lt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LocationBoard" unique_id=1218932202]
+position = Vector2(1152.375, -20)
+shape = SubResource("RectangleShape2D_lcd7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LocationBoard" unique_id=1058056308]
+position = Vector2(1152.5, 1317)
+shape = SubResource("RectangleShape2D_gu4jm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LocationBoard" unique_id=699434242]
+position = Vector2(2325, 648.375)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_u0o80")
+
+[node name="Riptide_Timer" type="Timer" parent="." unique_id=1795781043]
+wait_time = 20.0
+autostart = true
+
+[connection signal="timeout" from="Riptide_Timer" to="." method="_on_timer_timeout"]

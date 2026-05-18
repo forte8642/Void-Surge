@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b26j6xov7x8vj"]
+
+[ext_resource type="Script" uid="uid://3731rierik26" path="res://Creatures/Enemy/Wizard_enemy/fire_ball.gd" id="1_0f4qi"]
+[ext_resource type="Texture2D" uid="uid://ciu5mgi6kdjx1" path="res://icon.svg" id="2_yjrgn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8cms"]
+radius = 12.0415945
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pc8yb"]
+radius = 12.0
+
+[node name="fire_ball" type="CharacterBody2D" unique_id=430726254]
+script = ExtResource("1_0f4qi")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1514531258]
+scale = Vector2(0.1484375, 0.1484375)
+texture = ExtResource("2_yjrgn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1987705417]
+shape = SubResource("CircleShape2D_s8cms")
+disabled = true
+
+[node name="Attack_area" type="Area2D" parent="." unique_id=426514315]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_area" unique_id=600173839]
+shape = SubResource("CircleShape2D_pc8yb")
+
+[connection signal="body_entered" from="Attack_area" to="." method="_on_attack_area_body_entered"]

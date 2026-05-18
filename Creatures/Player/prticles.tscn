@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://hjinlifggf6i"]
+
+[ext_resource type="Texture2D" uid="uid://b3pneuikv8nq1" path="res://Sprites/particle.png" id="1_n8bhe"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7qxdx"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[node name="Prticles" type="GPUParticles2D" unique_id=631885984]
+z_index = -1
+emitting = false
+amount = 10
+texture = ExtResource("1_n8bhe")
+lifetime = 0.09999999999999999
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_7qxdx")
