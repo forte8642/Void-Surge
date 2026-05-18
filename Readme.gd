@@ -96,3 +96,6 @@ extends Node
 # Player.gd = */Creatures/Player/Player.gd
 # Coin.gd = */Creatures/Side_items/Coin.gd
 # healing_arrow.gd = */Creatures/Side_items/healing_arrow.gd
+
+
+#Простое изменение для проверки git
