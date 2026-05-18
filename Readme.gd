@@ -98,4 +98,4 @@ extends Node
 # healing_arrow.gd = */Creatures/Side_items/healing_arrow.gd
 
 
-#Простое изменение для проверки git
+#Изменение для проверки git
